@@ -1,0 +1,44 @@
+{
+  "name": "entrega-final",
+  "version": "1.0.0",
+  "description": "Proyecto final curso Node",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leacaracca/APIRest.git"
+  },
+  "keywords": [
+    "Node",
+    "JavaScript"
+  ],
+  "author": "Leandro Caracca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leacaracca/APIRest/issues"
+  },
+  "homepage": "https://github.com/leacaracca/APIRest#readme",
+  "dependencies": {
+    "body-parser": "2.2.0",
+    "cors": "2.8.5",
+    "dotenv": "17.0.1",
+    "express": "5.1.0",
+    "firebase": "11.10.0",
+    "jsonwebtoken": "9.0.2"
+  },
+  "devDependencies": {
+    "standard": "17.1.2"
+  },
+   "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json",
+    "rules":{
+      "prefer-const":"off",
+      "quotes":"off",
+      "object-shorthand": "off"
+    }    
+  }
+}
