@@ -10,24 +10,24 @@ import {
     doc
 } from 'firebase/firestore'
 
+class Product {
 
-const productsCollection = collection(db, 'products')
+    productsCollection = collection(db, 'products')
 
-export const getAllProducts = async () => {
-    try {
+    async getAllProducts () {
+      try {
       const querySnapShot = await getDocs(productsCollection)
       const products = querySnapShot.map(doc => ({
-        id:doc.id,
-        ...doc.data()
+      id:doc.id,
+      ...doc.data()
       }))
       return products
     } catch (error) {
        throw new (Error,error.message)
+      }
     }
-}
 
-export const getProductById = async (id) => {    
-
+    async getProductById (id) {   
         try {
           const product = await getDoc(doc(productsCollection, id))
           if(product.exists()){
@@ -37,21 +37,23 @@ export const getProductById = async (id) => {
         }catch (error) {
             throw new (Error,error.message)
         }
-}
+    }
 
-export const saveProduct = async (product) => {
-
-    try {
-      await addDoc(productsCollection,product)
-    } catch (error) {
+    async saveProduct (object) {
+      try {
+        await addDoc(productsCollection, object)
+      } catch (error) {
       throw new (Error,error.message)
-    }    
-}
+      }    
+    }
 
-export const deleteProduct = async (id) => {
-    try {
-      await deleteDoc(doc(productsCollection, id))
-    } catch (error) {
-      throw new (Error, error.message)
+    async deleteProduct (id) {
+      try {
+        await deleteDoc(doc(productsCollection, id))
+      } catch (error) {
+        throw new (Error, error.message)
+      }
     }
 }
+
+export default Product

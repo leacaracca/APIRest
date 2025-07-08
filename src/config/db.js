@@ -7,12 +7,12 @@ config()
 
 
 const firebaseConfig = {
-  APIKEY:process.env.APIKEY,
-  AUTHDOMAIN:process.env.AUTHDOMAIN ,
-  PROJECTID: process.env.PROJECTID,
-  STORAGEBUCKET:process.env.STORAGEBUCKET,
-  MESSAGINGSENDERID: process.env.MESSAGINGSENDERID,
-  APPID:process.env.APPID 
+  apiKey: process.env.APIKEY,
+  authDomain: process.env.AUTHDOMAIN,
+  projectId: process.env.PROJECTID,
+  storageBucket:process.env.STORAGEBUCKET,
+  messagingSenderId: process.env.MESSAGINGSENDERID,
+  appId: process.env.APPID,
 };
 
 // Initialize Firebase

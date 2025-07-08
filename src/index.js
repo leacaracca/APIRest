@@ -1,4 +1,6 @@
 import express from 'express'
+import productRouter from './routes/product.route.js'
+
 
 
 
@@ -13,7 +15,7 @@ app.use(express.urlencoded({extended: true}))
 
 //routes
 
-
+app.use('api/products', productRouter )
 
 //listeners
 
