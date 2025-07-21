@@ -1,5 +1,6 @@
-import productModel from '../models/product.model.js'
+import Product from '../models/product.model.js'
 
+const productModel = new Product()
 
 const getAllProducts = async () =>{
 
@@ -12,9 +13,9 @@ const getProductById = async (id) => {
     
 }
 
-const saveProduct = async (object) => {
-
-        return await productModel.saveProduct(object)
+const saveProduct = async (object) => {    
+    // me faltó hacer la lógica de negocio que valide que el producto ya estaba en la lista
+    return await productModel.saveProduct(object)
     
 }
 
